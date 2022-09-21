@@ -1,8 +1,0 @@
-DROP TABLE IF EXISTS documents;
-
-CREATE TABLE documents (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    original_name TEXT NOT NULL,
-    system_name TEXT NOT NULL,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)

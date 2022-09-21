@@ -34,7 +34,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                    <th scope="col">Id#</th>
                     <th scope="col">Document Name</th>
                     <th scope="col">Date Created</th>
                     <th scope="col"></th>
@@ -44,11 +43,10 @@
                     {% if docs %}
                         {% for doc in docs %}
                             <tr>
-                                <th scope="row">{{ doc['system_name'][: -4] }}</th>
-                                <td>{{ doc['original_name'] }}</td>
-                                <td>{{ doc['created'] }}</td>
-                                <td><a href= "{{ url_for('media_upload_download', system_file_name=doc['system_name']) }}">Download</a></td>
-                            </tr>          
+                                <td>{{ doc['name'] }}</td>
+                                <td>{{ doc['time_created'] }}</td>
+                                <td><a href= "{{ doc['public_url'] }}" download>Download</a></td>
+                            </tr>
                         {% endfor %}
                     {% endif %}
                     </tbody>
